@@ -55,7 +55,7 @@
 }
 /* Hero Section */
 .hero-section {
-    background-image: url("images/bannerBg.jpg");
+    background-image: url(".images/bannerBg.jpg");
     background-size: cover;
     background-position: center;
     height: 100vh;
