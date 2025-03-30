@@ -55,6 +55,7 @@
 }
 /* Hero Section */
 .hero-section {
+    padding: 50px;
     background-image: url("images/bannerBg.jpg");
     background-size: cover;
     background-position: center;
@@ -66,6 +67,7 @@
 }
 
 .hero-content {
+    padding-top: 80px;
     max-width: 50%;
 }
 
@@ -188,12 +190,45 @@
     justify-content: space-between;
     padding: 4% 10%;
     background-color: #111111;
-    gap: 40px; /* Added gap between image and skill bars */
+    gap: 40px;
+    position: relative; /* Added for rocket positioning */
+    overflow: hidden; /* Ensure rocket stays within section */
+}
+
+.skill-image {
+    position: relative;
 }
 
 .skill-image img {
-    max-width: 300px; /* Smaller skills image */
+    max-width: 300px;
     height: auto;
+    display: block;
+}
+
+/* Rocket Animation */
+.floating-rocket {
+    animation: rocketEntry 1.5s ease-out forwards, 
+               floatAnimation 3s ease-in-out infinite 1.5s;
+    transform: translateY(100px);
+    opacity: 0;
+    max-width: 300px;
+    height: auto;
+}
+
+@keyframes rocketEntry {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
 }
 
 .skill-text {
@@ -210,15 +245,15 @@
 .skill {
     display: flex;
     align-items: center;
-    gap: 10px; /* Added gap between percentage, bar, and skill name */
+    gap: 10px;
     margin-bottom: 20px;
 }
 
 .skill-percentage {
-    color: white; /* White color for percentage */
+    color: white;
     font-family: "Lobster Two", serif;
     font-size: 1rem;
-    width: 40px; /* Fixed width for percentage */
+    width: 40px;
     text-align: right;
 }
 
@@ -227,41 +262,50 @@
     border-radius: 20px;
     height: 25px;
     width: 400px;
-    flex-grow: 1; /* Increased width of skill bars */
+    flex-grow: 1;
     position: relative;
-    overflow: hidden; /* Ensure the fill stays within the bar */
+    overflow: hidden;
 }
 
 .skill-bar-fill {
     background-color: #DE87F5;
     height: 100%;
     border-radius: 20px;
-    width: 0; /* Initially set to 0, filled dynamically */
-    transition: width 1.5s ease-in-out;
+    width: 0;
+    transition: width 1.5s ease-out;
 }
 
 .skill-title {
-    color: white; /* White color for skill names */
+    color: white;
     font-family: "Lobster Two", serif;
     font-size: 1.2rem;
-    width: 100px; /* Fixed width for skill names */
+    width: 100px;
 }
 
-/* Fill skill bars dynamically */
-.skill[data-skill="90"] .skill-bar-fill {
-    width: 90%;
-}
-
-.skill[data-skill="75"] .skill-bar-fill {
-    width: 75%;
-}
-
-.skill[data-skill="60"] .skill-bar-fill {
-    width: 60%;
-}
-
-.skill[data-skill="50"] .skill-bar-fill {
-    width: 50%;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .skill-text {
+        max-width: 100%;
+    }
+    
+    .skill {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .skill-bar {
+        width: 100%;
+    }
+    
+    .floating-rocket {
+        max-width: 200px;
+        margin: 0 auto;
+    }
 }
 
 /* Projects Section */
@@ -356,7 +400,7 @@
     font-size: 1rem;
 }
 
-.form-container h3{
+.form-container h3 {
     color: #fea764;
     font-family: "Lobster Two", serif;
     font-size: 1.5rem;
@@ -364,7 +408,7 @@
 
 .form-container input,
 .form-container textarea {
-    background-color: #333; /* Darker text box */
+    background-color: #333;
     color: #fff;
 }
 
@@ -375,9 +419,33 @@
     cursor: pointer;
 }
 
+/* Telephone Animation */
 .contact-image img {
-    max-width: 300px; /* Smaller contact image */
+    max-width: 300px;
     height: auto;
+    animation: gentleTilt 4s ease-in-out infinite both;
+    animation-delay: 1.5s; /* Wait for fade-down to complete */
+    transform-origin: bottom center; /* Makes it tilt from the base */
+}
+
+@keyframes gentleTilt {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg); /* Tilt slightly left */
+    }
+    75% {
+        transform: rotate(5deg); /* Tilt slightly right */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-image img {
+        max-width: 250px;
+        margin-top: 30px;
+    }
 }
 
 .social-icons {
@@ -387,8 +455,50 @@
 }
 
 .social-icons img {
-    width: 50px; /* Smaller social icons */
+    width: 50px;
     height: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .contact-image img {
+        max-width: 250px;
+        margin-top: 30px;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* Update the existing button styles */
+.form-container button {
+    background-color: #fea764;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    position: relative; /* For potential pseudo-element effects */
+    overflow: hidden; /* For potential pseudo-element effects */
+    border: none; /* Ensure no default border */
+}
+
+/* Hover effect */
+.form-container button:hover {
+    background-color: #ff8c42; /* Slightly darker orange */
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(254, 167, 100, 0.3); /* Soft glow effect */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Active/click effect */
+.form-container button:active {
+    transform: translateY(1px); /* Push down effect when clicked */
+    box-shadow: 0 2px 4px rgba(254, 167, 100, 0.3); /* Reduced shadow when pressed */
 }
 
 /* Footer */
