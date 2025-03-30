@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -37,23 +38,26 @@
 
 <!-- Hero Section -->
 <section class="hero-section" id="hero">
-    <div class="hero-content">
+    <div data-aos="fade-up"
+    data-aos-easing="linear"
+    data-aos-duration="1500" class="hero-content">
         <h1><span class="hello">Hello!</span> I am</h1>
         <h2>AESHA SIDDIQUA</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum deleniti perspiciatis accusantium odio placeat quae exercitationem nemo eius sed autem eveniet pariatur a sint totam perferendis quod, suscipit eum atque?</p>
         <a href="#about" class="hero-button">Learn More</a>
     </div>
-    <div class="hero-img">
+    <div data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500" class="hero-img">
         <img src="./images/banner-img.png" alt="Banner Image" class="responsive-img">
     </div>
 </section>
 
 <!-- About Section -->
 <section class="about" id="about">
-    <div class="about-image">
-        <img src="./images/about-img.png" alt="About Image" class="responsive-img">
-    </div>
-    <div class="about-text">
+    
+    <div data-aos="fade-up"
+    data-aos-duration="3000" class="about-text">
         <h1 class="about-title">About Me</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur tenetur veritatis magnam aut odit accusantium dicta, tempora error maiores ratione alias provident itaque dolore qui. Quas accusamus temporibus quo suscipit eligendi dolor quibusdam aliquam ex, repudiandae magni minus odio nobis?</p>
         <div class="last-text">
@@ -67,23 +71,28 @@
             </div>
         </div>
     </div>
+
+    <div data-aos="fade-up"
+    data-aos-duration="3000" class="about-image">
+        <img src="./images/about-img.png" alt="About Image" class="responsive-img">
+    </div>
 </section>
 
 <!-- Education Section -->
 <section class="education-section" id="education">
     <h1 class="section-title">EDUCATION</h1>
     <div class="timeline">
-        <div class="timeline-item">
+        <div data-aos="fade-right" data-aos-duration="3000" class="timeline-item">
             <h3>B.Sc Hons. in Physics</h3>
             <p>Mawlana Bhashani Science And Technology University</p>
             <span>2021 - present</span>
         </div>
-        <div class="timeline-item">
+        <div data-aos="fade-left" data-aos-duration="3000" class="timeline-item">
             <h3>HSC</h3>
             <p>Kumudini Govt. College</p>
             <span>2020</span>
         </div>
-        <div class="timeline-item">
+        <div data-aos="fade-right" data-aos-duration="3000" class="timeline-item">
             <h3>SSC</h3>
             <p>Bindubasini Govt Girls´ High School</p>
             <span>2018</span>
@@ -94,36 +103,36 @@
 <!-- Skills Section -->
 <!-- Skills Section -->
 <section class="skills" id="skills">
-    <div class="skill-image">
-        <img src="./images/skill-img.png" alt="Skills Image" class="responsive-img">
+    <div data-aos="fade-up" data-aos-duration="3000" class="skill-image">
+        <img src="./images/skill-img.png" alt="Skills Image" class="responsive-img floating-rocket">
     </div>
     <div class="skill-text">
         <h1 class="skill-section-title">SKILLS</h1>
         <div class="skill" data-skill="90">
             <div class="skill-percentage">90%</div>
             <div class="skill-bar">
-                <div class="skill-bar-fill"></div>
+                <div class="skill-bar-fill" data-width="90"></div>
             </div>
             <div class="skill-title">HTML</div>
         </div>
         <div class="skill" data-skill="75">
             <div class="skill-percentage">75%</div>
             <div class="skill-bar">
-                <div class="skill-bar-fill"></div>
+                <div class="skill-bar-fill" data-width="75"></div>
             </div>
             <div class="skill-title">CSS</div>
         </div>
         <div class="skill" data-skill="60">
             <div class="skill-percentage">60%</div>
             <div class="skill-bar">
-                <div class="skill-bar-fill"></div>
+                <div class="skill-bar-fill" data-width="60"></div>
             </div>
             <div class="skill-title">JavaScript</div>
         </div>
         <div class="skill" data-skill="50">
             <div class="skill-percentage">50%</div>
             <div class="skill-bar">
-                <div class="skill-bar-fill"></div>
+                <div class="skill-bar-fill" data-width="50"></div>
             </div>
             <div class="skill-title">React</div>
         </div>
@@ -134,11 +143,11 @@
 <section class="project" id="projects">
     <h1 class="project-title">My Projects</h1>
     <div class="gallery">
-        <div class="gallery-item">
+        <div data-aos="flip-up" data-aos-duration="3000" class="gallery-item">
             <img src="./images/Aspire.png" alt="Project 1" class="responsive-img">
             <div class="overlay">Project 1</div>
         </div>
-        <div class="gallery-item">
+        <div data-aos="flip-down" data-aos-duration="3000" class="gallery-item">
             <img src="./images/cit.png" alt="Project 2" class="responsive-img">
             <div class="overlay">Project 2</div>
         </div>
@@ -149,7 +158,9 @@
 <section class="contact" id="contact">
     <h1 class="contact-title">CONTACT</h1>
     <div class="contact-content">
-        <div class="form-container">
+        <div data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1500" class="form-container">
             <h3>Have a Project in Mind?</h3>
             <form>
                 <input type="text" name="name" placeholder="Your Name" required>
@@ -165,7 +176,9 @@
                 <div class="email"><a href="https://siddiquawp@gmail.com"><img src="./images/email.png" alt="Email"></a></div>
             </div>
         </div>
-        <div class="contact-image">
+        <div data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500" class="contact-image">
             <img src="./images/contact-img.png" alt="Contact Image" class="responsive-img">
         </div>
     </div>
@@ -196,5 +209,9 @@
 <script>
     AOS.init();
 </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
 </body>
 </html>
